@@ -49,7 +49,7 @@ fn manifest() -> Value {
 
 fn config_path() -> std::path::PathBuf {
     let home = std::env::var_os("GRAY_HOME").map(std::path::PathBuf::from)
-        .or_else(|| std::env::var_os("HOME").map(|h| std::path::PathBuf::from(h).join(".gray")))
+        .or_else(|| std::env::home_dir().map(|h| h.join(".gray")))
         .unwrap_or_else(|| std::path::PathBuf::from("."));
     home.join("mem0").join("config.json")
 }
