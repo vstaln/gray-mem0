@@ -44,6 +44,7 @@ fn manifest() -> Value {
                 "run_id": {"type": "string"}}}},
         ],
         "commands": ["/mem0"], "subcommands": ["mem0"],
+        "command_descriptions": {"/mem0": "set up Mem0 memory and check status"},
     })
 }
 
